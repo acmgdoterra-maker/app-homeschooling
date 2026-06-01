@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-hueso text-tinta font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-salvia text-tinta rounded-lg font-semibold hover:bg-opacity-90 transition;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-nude text-tinta rounded-lg font-semibold hover:bg-opacity-80 transition;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-nude;
+  }
+}
