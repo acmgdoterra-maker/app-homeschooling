@@ -10,7 +10,7 @@ interface LearningDiaryProps {
 export default function LearningDiary({ childId }: LearningDiaryProps) {
   const [date, setDate] = useState(new Date().toISOString().split('T')[0])
   const [entry, setEntry] = useState('')
-  const [mood, setMood] = useState('😊')
+  const [mood, setMood] = useState('excellent')
   const [entries, setEntries] = useState<LearningEntry[]>([])
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function LearningDiary({ childId }: LearningDiaryProps) {
     await db.learningEntries.add(newEntry)
     loadEntries()
     setEntry('')
-    setMood('😊')
+    setMood('excellent')
   }
 
   const deleteEntry = async (id: string) => {
@@ -48,12 +48,19 @@ export default function LearningDiary({ childId }: LearningDiaryProps) {
     loadEntries()
   }
 
-  const moods = ['😢', '😞', '😐', '🙂', '😊', '😄']
+  const moods = [
+    { id: 'poor', label: 'Muy mal' },
+    { id: 'bad', label: 'Mal' },
+    { id: 'neutral', label: 'Regular' },
+    { id: 'good', label: 'Bien' },
+    { id: 'very-good', label: 'Muy bien' },
+    { id: 'excellent', label: 'Excelente' },
+  ]
 
   return (
     <div className="space-y-6">
       <div className="card">
-        <h3 className="text-xl font-serif text-tinta mb-4">Nuevo Registro</h3>
+        <h3 className="text-lg font-serif text-tinta mb-6">Nuevo Registro</h3>
 
         <div className="mb-4">
           <label className="block text-sm font-semibold text-cacao mb-2">
@@ -69,18 +76,20 @@ export default function LearningDiary({ childId }: LearningDiaryProps) {
 
         <div className="mb-4">
           <label className="block text-sm font-semibold text-cacao mb-2">
-            Estado de ánimo
+            Bienestar
           </label>
-          <div className="flex gap-2">
+          <div className="grid grid-cols-3 gap-2">
             {moods.map(m => (
               <button
-                key={m}
-                onClick={() => setMood(m)}
-                className={`text-3xl transition ${
-                  mood === m ? 'scale-125' : 'opacity-50 hover:opacity-100'
+                key={m.id}
+                onClick={() => setMood(m.id)}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  mood === m.id
+                    ? 'bg-salvia text-tinta'
+                    : 'bg-nude text-cacao hover:bg-opacity-80'
                 }`}
               >
-                {m}
+                {m.label}
               </button>
             ))}
           </div>
@@ -104,28 +113,31 @@ export default function LearningDiary({ childId }: LearningDiaryProps) {
       </div>
 
       <div>
-        <h3 className="text-xl font-serif text-tinta mb-4">Entradas Anteriores</h3>
+        <h3 className="text-lg font-serif text-tinta mb-4">Entradas Anteriores</h3>
         <div className="space-y-4 max-h-96 overflow-y-auto">
           {entries.length === 0 ? (
             <p className="text-cacao">Sin entradas de diario aún</p>
           ) : (
-            entries.map(ent => (
-              <div key={ent.id} className="card">
-                <div className="flex items-start justify-between mb-2">
-                  <div>
-                    <p className="font-semibold text-cacao">{ent.date}</p>
-                    <p className="text-2xl">{ent.mood}</p>
+            entries.map(ent => {
+              const moodLabel = moods.find(m => m.id === ent.mood)?.label || ent.mood
+              return (
+                <div key={ent.id} className="card">
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <p className="text-sm text-cacao">{ent.date}</p>
+                      <p className="text-sm font-medium text-tinta mt-1">{moodLabel}</p>
+                    </div>
+                    <button
+                      onClick={() => deleteEntry(ent.id)}
+                      className="text-cacao hover:text-tinta text-sm"
+                    >
+                      Eliminar
+                    </button>
                   </div>
-                  <button
-                    onClick={() => deleteEntry(ent.id)}
-                    className="text-cacao hover:text-tinta"
-                  >
-                    ✕
-                  </button>
+                  <p className="text-tinta text-sm whitespace-pre-wrap">{ent.entry}</p>
                 </div>
-                <p className="text-tinta whitespace-pre-wrap">{ent.entry}</p>
-              </div>
-            ))
+              )
+            })
           )}
         </div>
       </div>

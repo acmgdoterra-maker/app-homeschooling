@@ -99,7 +99,7 @@ export default function Library({ childId }: LibraryProps) {
           </button>
         </div>
         <button onClick={() => setShowForm(!showForm)} className="btn-primary">
-          + Nuevo Libro
+          Nuevo Libro
         </button>
       </div>
 
@@ -179,9 +179,9 @@ export default function Library({ childId }: LibraryProps) {
                 </div>
                 <button
                   onClick={() => deleteBook(book.id)}
-                  className="text-cacao hover:text-tinta"
+                  className="text-cacao hover:text-tinta text-sm"
                 >
-                  ✕
+                  Eliminar
                 </button>
               </div>
 

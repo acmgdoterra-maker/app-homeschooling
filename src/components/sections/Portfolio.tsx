@@ -139,7 +139,7 @@ export default function Portfolio({ childId }: PortfolioProps) {
           />
         </div>
         <button onClick={generatePDF} className="btn-primary whitespace-nowrap">
-          📄 Descargar PDF
+          Descargar PDF
         </button>
       </div>
 

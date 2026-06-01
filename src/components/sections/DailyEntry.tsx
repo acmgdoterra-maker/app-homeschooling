@@ -146,7 +146,7 @@ export default function DailyEntry({ childId }: DailyEntryProps) {
           onClick={() => setShowNewSubject(!showNewSubject)}
           className="btn-secondary h-10"
         >
-          + Nueva Materia
+          Nueva Materia
         </button>
       </div>
 
@@ -213,7 +213,7 @@ export default function DailyEntry({ childId }: DailyEntryProps) {
             className="flex-1 px-4 py-2 border-2 border-nude rounded-lg focus:outline-none focus:border-salvia"
           />
           <button onClick={addChecklistItem} className="btn-primary">
-            +
+            Agregar
           </button>
         </div>
       </div>
@@ -228,9 +228,9 @@ export default function DailyEntry({ childId }: DailyEntryProps) {
               <span>{item}</span>
               <button
                 onClick={() => setReinforcements(reinforcements.filter((_, i) => i !== idx))}
-                className="text-cacao hover:text-tinta"
+                className="text-cacao hover:text-tinta text-sm"
               >
-                ✕
+                Eliminar
               </button>
             </div>
           ))}
@@ -246,7 +246,7 @@ export default function DailyEntry({ childId }: DailyEntryProps) {
             className="flex-1 px-4 py-2 border-2 border-nude rounded-lg focus:outline-none focus:border-salvia"
           />
           <button onClick={addReinforcement} className="btn-primary">
-            +
+            Agregar
           </button>
         </div>
       </div>

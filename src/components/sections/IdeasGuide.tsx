@@ -118,7 +118,7 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
                 : 'bg-white border-2 border-nude text-cacao'
             }`}
           >
-            🎬 Documentales
+            Documentales
           </button>
           <button
             onClick={() => setFilterType('museum')}
@@ -128,7 +128,7 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
                 : 'bg-white border-2 border-nude text-cacao'
             }`}
           >
-            🏛️ Museos
+            Museos
           </button>
           <button
             onClick={() => setFilterType('activity')}
@@ -138,11 +138,11 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
                 : 'bg-white border-2 border-nude text-cacao'
             }`}
           >
-            🎨 Actividades
+            Actividades
           </button>
         </div>
         <button onClick={() => setShowForm(!showForm)} className="btn-primary whitespace-nowrap">
-          + Nueva Idea
+          Nueva Idea
         </button>
       </div>
 
@@ -203,22 +203,22 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
         ) : (
           filteredIdeas.map(idea => (
             <div key={idea.id} className="card">
-              <div className="flex justify-between items-start mb-2">
+              <div className="flex justify-between items-start mb-3">
                 <div>
-                  <span className="inline-block text-xl mb-1 mr-2">
+                  <p className="text-xs font-semibold text-cacao mb-1 uppercase">
                     {idea.type === 'documentary'
-                      ? '🎬'
+                      ? 'Documental'
                       : idea.type === 'museum'
-                      ? '🏛️'
-                      : '🎨'}
-                  </span>
-                  <h4 className="font-semibold text-tinta inline">{idea.title}</h4>
+                      ? 'Museo'
+                      : 'Actividad'}
+                  </p>
+                  <h4 className="font-semibold text-tinta">{idea.title}</h4>
                 </div>
                 <button
                   onClick={() => deleteIdea(idea.id)}
-                  className="text-cacao hover:text-tinta"
+                  className="text-cacao hover:text-tinta text-sm"
                 >
-                  ✕
+                  Eliminar
                 </button>
               </div>
 

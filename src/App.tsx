@@ -57,9 +57,11 @@ function App() {
         onSelectChild={setSelectedChildId}
         onChildAdded={handleAddChild}
       />
-      {selectedChild && (
-        <Dashboard childId={selectedChildId!} child={selectedChild} />
-      )}
+      <main className="ml-64">
+        {selectedChild && (
+          <Dashboard childId={selectedChildId!} child={selectedChild} />
+        )}
+      </main>
     </div>
   )
 }

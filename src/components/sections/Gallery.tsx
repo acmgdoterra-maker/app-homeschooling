@@ -69,7 +69,7 @@ export default function Gallery({ childId }: GalleryProps) {
   return (
     <div className="space-y-6">
       <button onClick={() => setShowForm(!showForm)} className="btn-primary">
-        + Agregar Foto
+        Agregar Foto
       </button>
 
       {showForm && (
