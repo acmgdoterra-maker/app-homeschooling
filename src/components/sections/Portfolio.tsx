@@ -88,7 +88,7 @@ export default function Portfolio({ childId }: PortfolioProps) {
       doc.setFont('Inter', 'normal')
       doc.setFontSize(10)
 
-      records.forEach((record, idx) => {
+      records.forEach((record) => {
         if (yPos > pageHeight - 20) {
           doc.addPage()
           yPos = 15

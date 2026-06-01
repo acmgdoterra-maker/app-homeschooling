@@ -41,13 +41,15 @@ export default function HabitTracker({ childId }: HabitTrackerProps) {
       currentRecord.updatedAt = new Date().toISOString()
       await db.habitTracking.update(currentRecord.id, currentRecord)
     } else {
+      const now = new Date().toISOString()
       const record: HabitTracking = {
         id: uuidv4(),
         childId,
         date,
         habits,
         notes,
-        createdAt: new Date().toISOString(),
+        createdAt: now,
+        updatedAt: now,
       }
       await db.habitTracking.add(record)
       setCurrentRecord(record)

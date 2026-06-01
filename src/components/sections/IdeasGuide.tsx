@@ -19,11 +19,10 @@ interface Idea {
 
 export default function IdeasGuide({ childId }: IdeasGuideProps) {
   const [ideas, setIdeas] = useState<Idea[]>([])
-  const [documentaries, setDocumentaries] = useState<DocumentaryRecord[]>([])
   const [showForm, setShowForm] = useState(false)
   const [filterType, setFilterType] = useState<'all' | 'documentary' | 'museum' | 'activity'>('all')
   const [formData, setFormData] = useState({
-    type: 'activity' as const,
+    type: 'activity' as 'documentary' | 'museum' | 'activity',
     title: '',
     subject: '',
     description: '',
@@ -50,7 +49,6 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
     }))
 
     setIdeas(docIdeas)
-    setDocumentaries(docs)
   }
 
   const addIdea = async () => {
@@ -97,12 +95,6 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
   const filteredIdeas = filterType === 'all'
     ? ideas
     : ideas.filter(i => i.type === filterType)
-
-  const typeLabels = {
-    documentary: '🎬 Documental',
-    museum: '🏛️ Museo',
-    activity: '🎨 Actividad',
-  }
 
   return (
     <div className="space-y-6">

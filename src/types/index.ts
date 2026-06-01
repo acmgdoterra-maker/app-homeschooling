@@ -65,6 +65,7 @@ export interface HabitTracking {
   };
   notes: string;
   createdAt: string;
+  updatedAt: string;
 }
 
 export interface LearningEntry {

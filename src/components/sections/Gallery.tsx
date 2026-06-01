@@ -16,7 +16,6 @@ export default function Gallery({ childId }: GalleryProps) {
     description: '',
   })
   const [imageData, setImageData] = useState<string | null>(null)
-  const fileInputRef = useState<HTMLInputElement | null>(null)[1]
 
   useEffect(() => {
     loadPhotos()

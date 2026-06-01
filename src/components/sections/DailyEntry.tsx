@@ -107,8 +107,6 @@ export default function DailyEntry({ childId }: DailyEntryProps) {
     setReinforcements([])
   }
 
-  const currentSubject = subjects.find(s => s.id === selectedSubject)
-
   return (
     <div className="space-y-6">
       <div className="flex gap-4 items-end">
