@@ -15,27 +15,27 @@ interface DashboardProps {
 }
 
 const tabs = [
-  { id: 'daily', label: 'Registro Diario', icon: '📝' },
-  { id: 'calendar', label: 'Calendario', icon: '📅' },
-  { id: 'gallery', label: 'Galería', icon: '🖼️' },
-  { id: 'habits', label: 'Hábitos', icon: '✓' },
-  { id: 'diary', label: 'Diario', icon: '📖' },
-  { id: 'library', label: 'Biblioteca', icon: '📚' },
-  { id: 'ideas', label: 'Ideas', icon: '💡' },
-  { id: 'portfolio', label: 'Portafolio', icon: '🎓' },
+  { id: 'daily', label: 'Registro Diario' },
+  { id: 'calendar', label: 'Calendario' },
+  { id: 'gallery', label: 'Galería' },
+  { id: 'habits', label: 'Hábitos' },
+  { id: 'diary', label: 'Diario' },
+  { id: 'library', label: 'Biblioteca' },
+  { id: 'ideas', label: 'Ideas' },
+  { id: 'portfolio', label: 'Portafolio' },
 ]
 
 export default function Dashboard({ childId, child }: DashboardProps) {
   const [activeTab, setActiveTab] = useState('daily')
 
   return (
-    <div className="max-w-7xl mx-auto p-4">
-      <div className="mb-6">
-        <h2 className="text-3xl font-serif text-tinta mb-4">
-          Portafolio de {child.name}
+    <div className="p-6 md:p-8">
+      <div className="mb-8">
+        <h2 className="text-2xl font-serif text-tinta mb-6">
+          {child.name}
         </h2>
 
-        <div className="flex gap-2 flex-wrap overflow-x-auto pb-2">
+        <div className="flex gap-2 flex-wrap overflow-x-auto pb-3 border-b-2 border-nude">
           {tabs.map(tab => (
             <button
               key={tab.id}
@@ -46,7 +46,7 @@ export default function Dashboard({ childId, child }: DashboardProps) {
                   : 'bg-white border-2 border-nude text-cacao hover:border-salvia'
               }`}
             >
-              {tab.icon} {tab.label}
+              {tab.label}
             </button>
           ))}
         </div>
