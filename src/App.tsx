@@ -57,7 +57,7 @@ function App() {
         onSelectChild={setSelectedChildId}
         onChildAdded={handleAddChild}
       />
-      <main className="ml-64">
+      <main className="md:ml-64 pb-20 md:pb-0">
         {selectedChild && (
           <Dashboard childId={selectedChildId!} child={selectedChild} />
         )}
