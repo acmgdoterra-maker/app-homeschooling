@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
-import { HabitTracking } from '../../types'
+import type { HabitTracking } from '../../types'
 import { v4 as uuidv4 } from 'uuid'
 
 interface HabitTrackerProps {

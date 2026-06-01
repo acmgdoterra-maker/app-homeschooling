@@ -1,4 +1,4 @@
-import { Child } from '../types'
+import type { Child } from '../types'
 import ChildSetup from './ChildSetup'
 import { useState } from 'react'
 

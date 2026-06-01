@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Child } from '../types'
+import type { Child } from '../types'
 import DailyEntry from './sections/DailyEntry'
 import Calendar from './sections/Calendar'
 import Gallery from './sections/Gallery'

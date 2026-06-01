@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
 import jsPDF from 'jspdf'
-import { DailyRecord, HabitTracking } from '../../types'
+import type { DailyRecord, HabitTracking } from '../../types'
 
 interface PortfolioProps {
   childId: string

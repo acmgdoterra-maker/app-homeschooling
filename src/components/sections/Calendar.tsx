@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
-import { CalendarEvent } from '../../types'
+import type { CalendarEvent } from '../../types'
 import { v4 as uuidv4 } from 'uuid'
 
 interface CalendarProps {

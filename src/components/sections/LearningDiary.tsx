@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
-import { LearningEntry } from '../../types'
+import type { LearningEntry } from '../../types'
 import { v4 as uuidv4 } from 'uuid'
 
 interface LearningDiaryProps {
