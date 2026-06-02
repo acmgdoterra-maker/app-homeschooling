@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
 import jsPDF from 'jspdf'
-import { DailyRecord, HabitTracking } from '../../types'
+import type { DailyRecord, HabitTracking } from '../../types'
 
 interface PortfolioProps {
   childId: string
@@ -88,7 +88,7 @@ export default function Portfolio({ childId }: PortfolioProps) {
       doc.setFont('Inter', 'normal')
       doc.setFontSize(10)
 
-      records.forEach((record, idx) => {
+      records.forEach((record) => {
         if (yPos > pageHeight - 20) {
           doc.addPage()
           yPos = 15

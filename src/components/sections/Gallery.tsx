@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
-import { Photo } from '../../types'
+import type { Photo } from '../../types'
 import { v4 as uuidv4 } from 'uuid'
 
 interface GalleryProps {
@@ -16,7 +16,6 @@ export default function Gallery({ childId }: GalleryProps) {
     description: '',
   })
   const [imageData, setImageData] = useState<string | null>(null)
-  const fileInputRef = useState<HTMLInputElement | null>(null)[1]
 
   useEffect(() => {
     loadPhotos()

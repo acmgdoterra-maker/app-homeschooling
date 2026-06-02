@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
-import { Subject, DailyRecord, ChecklistItem } from '../../types'
+import type { Subject, DailyRecord, ChecklistItem } from '../../types'
 import { v4 as uuidv4 } from 'uuid'
 
 interface DailyEntryProps {
@@ -106,8 +106,6 @@ export default function DailyEntry({ childId }: DailyEntryProps) {
     setChecklistItems([])
     setReinforcements([])
   }
-
-  const currentSubject = subjects.find(s => s.id === selectedSubject)
 
   return (
     <div className="space-y-6">

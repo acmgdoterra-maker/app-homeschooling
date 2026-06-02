@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { db } from '../../db/database'
-import { DocumentaryRecord } from '../../types'
+import type { DocumentaryRecord } from '../../types'
 import { v4 as uuidv4 } from 'uuid'
 
 interface IdeasGuideProps {
@@ -19,11 +19,10 @@ interface Idea {
 
 export default function IdeasGuide({ childId }: IdeasGuideProps) {
   const [ideas, setIdeas] = useState<Idea[]>([])
-  const [documentaries, setDocumentaries] = useState<DocumentaryRecord[]>([])
   const [showForm, setShowForm] = useState(false)
   const [filterType, setFilterType] = useState<'all' | 'documentary' | 'museum' | 'activity'>('all')
   const [formData, setFormData] = useState({
-    type: 'activity' as const,
+    type: 'activity' as 'documentary' | 'museum' | 'activity',
     title: '',
     subject: '',
     description: '',
@@ -50,7 +49,6 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
     }))
 
     setIdeas(docIdeas)
-    setDocumentaries(docs)
   }
 
   const addIdea = async () => {
@@ -98,11 +96,6 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
     ? ideas
     : ideas.filter(i => i.type === filterType)
 
-  const typeLabels = {
-    documentary: '🎬 Documental',
-    museum: '🏛️ Museo',
-    activity: '🎨 Actividad',
-  }
 
   return (
     <div className="space-y-6">
@@ -126,7 +119,7 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
                 : 'bg-white border-2 border-nude text-cacao'
             }`}
           >
-            🎬 Documentales
+            Documentales
           </button>
           <button
             onClick={() => setFilterType('museum')}
@@ -136,7 +129,7 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
                 : 'bg-white border-2 border-nude text-cacao'
             }`}
           >
-            🏛️ Museos
+            Museos
           </button>
           <button
             onClick={() => setFilterType('activity')}
@@ -146,11 +139,11 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
                 : 'bg-white border-2 border-nude text-cacao'
             }`}
           >
-            🎨 Actividades
+            Actividades
           </button>
         </div>
         <button onClick={() => setShowForm(!showForm)} className="btn-primary whitespace-nowrap">
-          + Nueva Idea
+          Nueva Idea
         </button>
       </div>
 
@@ -160,7 +153,7 @@ export default function IdeasGuide({ childId }: IdeasGuideProps) {
 
           <select
             value={formData.type}
-            onChange={(e) => setFormData({ ...formData, type: e.target.value as any })}
+            onChange={(e) => setFormData({ ...formData, type: e.target.value as 'documentary' | 'museum' | 'activity' })}
             className="w-full px-4 py-2 border-2 border-nude rounded-lg mb-3 focus:outline-none focus:border-salvia"
           >
             <option value="activity">Actividad</option>

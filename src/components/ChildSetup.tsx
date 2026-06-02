@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Child } from '../types'
+import type { Child } from '../types'
 import { v4 as uuidv4 } from 'uuid'
 
 const colors = ['#B5CA8A', '#E5DCC5', '#6B5444', '#FF6B6B', '#4ECDC4']
