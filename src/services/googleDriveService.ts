@@ -26,7 +26,7 @@ export class GoogleDriveService {
 
   async createOrUpdateBackup(data: BackupData): Promise<boolean> {
     if (!this.accessToken) {
-      console.error('No access token available')
+      console.error('✗ No access token available')
       return false
     }
 
@@ -38,18 +38,23 @@ export class GoogleDriveService {
 
       // Crear o actualizar archivo en Google Drive
       const fileContent = JSON.stringify(backupData, null, 2)
+      console.log('📤 Attempting backup, file size:', (fileContent.length / 1024).toFixed(2), 'KB')
 
       if (this.fileId) {
         // Actualizar archivo existente
+        console.log('📝 Updating existing file:', this.fileId)
         await this.updateFile(this.fileId, fileContent)
+        console.log('✓ File updated successfully')
       } else {
         // Crear nuevo archivo
+        console.log('✨ Creating new backup file')
         this.fileId = await this.createFile('homeschooling-backup.json', fileContent)
+        console.log('✓ File created with ID:', this.fileId)
       }
 
       return true
     } catch (error) {
-      console.error('Error backing up to Google Drive:', error)
+      console.error('✗ Error backing up to Google Drive:', error)
       return false
     }
   }
@@ -66,18 +71,27 @@ export class GoogleDriveService {
     form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }))
     form.append('file', new Blob([content], { type: 'application/json' }))
 
-    const response = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${this.accessToken}`,
-      },
-      body: form,
-    })
+    try {
+      const response = await fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${this.accessToken}`,
+        },
+        body: form,
+      })
 
-    if (!response.ok) throw new Error(`Failed to create file: ${response.statusText}`)
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error('API Response:', response.status, errorText)
+        throw new Error(`Failed to create file: ${response.statusText}`)
+      }
 
-    const result = await response.json()
-    return result.id
+      const result = await response.json()
+      return result.id
+    } catch (error) {
+      console.error('Error in createFile:', error)
+      throw error
+    }
   }
 
   private async updateFile(fileId: string, content: string): Promise<void> {

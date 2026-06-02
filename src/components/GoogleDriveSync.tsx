@@ -11,11 +11,16 @@ export default function GoogleDriveSync() {
 
   const googleLogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
+      console.log('✓ OAuth successful')
       if (tokenResponse.access_token) {
+        console.log('✓ Access token received')
         googleDriveService.setAccessToken(tokenResponse.access_token)
         setIsConnected(true)
         await syncNow()
       }
+    },
+    onError: (error) => {
+      console.error('✗ OAuth error:', error)
     },
     flow: 'implicit',
     scope: 'https://www.googleapis.com/auth/drive.file',
