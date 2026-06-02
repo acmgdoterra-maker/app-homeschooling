@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { db } from './db/database'
-import { Child } from './types'
+import type { Child } from './types'
 import Dashboard from './components/Dashboard'
 import ChildSetup from './components/ChildSetup'
 import Navigation from './components/Navigation'
+import GoogleDriveSync from './components/GoogleDriveSync'
 import './App.css'
 
 function App() {
@@ -57,9 +58,13 @@ function App() {
         onSelectChild={setSelectedChildId}
         onChildAdded={handleAddChild}
       />
-      {selectedChild && (
-        <Dashboard childId={selectedChildId!} child={selectedChild} />
-      )}
+      <main className="md:ml-64 pb-20 md:pb-0">
+        {selectedChild && (
+          <Dashboard childId={selectedChildId!} child={selectedChild} />
+        )}
+      </main>
+
+      <GoogleDriveSync />
     </div>
   )
 }
