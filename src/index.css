@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-hueso:  #FAF7F2;
+  --color-nude:   #E5DCC5;
+  --color-salvia: #B5CA8A;
+  --color-cacao:  #6B5444;
+  --color-tinta:  #1F1B17;
+
+  --font-family-serif:  'Playfair Display', serif;
+  --font-family-sans:   'Inter', sans-serif;
+  --font-family-script: 'Dancing Script', cursive;
+}
 
 @layer base {
   body {
     @apply bg-hueso text-tinta font-sans;
   }
-
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif font-bold;
   }
@@ -16,13 +24,11 @@
 
 @layer components {
   .btn-primary {
-    @apply px-4 py-2 bg-salvia text-tinta rounded-lg font-semibold hover:bg-opacity-90 transition;
+    @apply px-4 py-2 bg-salvia text-tinta rounded-lg font-semibold transition;
   }
-
   .btn-secondary {
-    @apply px-4 py-2 bg-nude text-tinta rounded-lg font-semibold hover:bg-opacity-80 transition;
+    @apply px-4 py-2 bg-nude text-tinta rounded-lg font-semibold transition;
   }
-
   .card {
     @apply bg-white rounded-lg shadow-md p-6 border border-nude;
   }
