@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Despacio y con Propósito — Adriana Maceira</title>
+  <meta name="description" content="Aprende a vivir despacio, con intención y propósito. Ebook + plantillas de homeschooling por Adriana Maceira. Solo €5,99." />
+  <meta property="og:title" content="Despacio y con Propósito — Adriana Maceira" />
+  <meta property="og:description" content="Aprende a vivir despacio y acompaña el aprendizaje de tus hijos con intención. Ebook + plantillas + asesoría incluida." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --hueso:        #FAF7F2;
+      --nude:         #E5DCC5;
+      --salvia:       #B5CA8A;
+      --cacao:        #6B5444;
+      --tinta:        #1F1B17;
+      --salvia-dark:  #9ab870;
+      --salvia-light: #d4e4b2;
+      --salvia-pale:  #edf5da;
+      --cacao-light:  #9c7a6a;
+      --warm-white:   #FFFDF9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--hueso);
+      color: var(--tinta);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.25; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container      { max-width: 760px;  margin: 0 auto; padding: 0 24px; }
+    .container--wide{ max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    .script-tag {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.1rem;
+      color: var(--cacao);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--salvia-light);
+      color: var(--cacao);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      width: 50px; height: 3px;
+      background: var(--salvia);
+      border-radius: 2px;
+      margin: 16px auto 28px;
+    }
+    .divider--left { margin-left: 0; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      filter: brightness(0.45) saturate(0.8);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(31,27,23,0.82) 0%,
+        rgba(31,27,23,0.55) 55%,
+        rgba(31,27,23,0.15) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: 60px 24px;
+      margin-left: max(24px, calc(50vw - 460px));
+    }
+    .hero-content .script-tag { color: var(--salvia); font-size: 1.3rem; margin-bottom: 16px; }
+    .hero-content h1 {
+      font-size: clamp(2.6rem, 6vw, 4rem);
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.15;
+    }
+    .hero-content h1 em { color: var(--salvia); font-style: italic; }
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 32px;
+      max-width: 420px;
+    }
+    .hero-price-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .price-pill {
+      background: var(--salvia);
+      color: var(--tinta);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      padding: 10px 28px;
+      border-radius: 50px;
+      line-height: 1;
+    }
+    .price-desc {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.88rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--salvia);
+      color: var(--tinta);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(181,202,138,0.5);
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover { background: var(--salvia-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(154,184,112,0.6); }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px 28px;
+      border-radius: 50px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--salvia); background: rgba(181,202,138,0.1); }
+    .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-note { margin-top: 16px; color: rgba(255,255,255,0.45); font-size: 0.8rem; }
+
+    /* ─── LIFESTYLE STRIP ─── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+      height: 260px;
+      gap: 0;
+    }
+    .photo-strip-item {
+      position: relative;
+      overflow: hidden;
+    }
+    .photo-strip-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .photo-strip-item:hover img { transform: scale(1.05); }
+    .photo-strip-item .caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(31,27,23,0.65));
+      color: #fff;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1rem;
+      padding: 20px 14px 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .photo-strip-item:hover .caption { opacity: 1; }
+
+    /* ─── FOR WHOM ─── */
+    .for-whom {
+      padding: 80px 0;
+      text-align: center;
+      background: var(--warm-white);
+    }
+    .for-whom h2 { font-size: 2.1rem; margin-bottom: 12px; }
+    .for-whom > .container > p { color: var(--cacao); max-width: 540px; margin: 0 auto 48px; font-size: 1.05rem; }
+
+    .whom-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 18px;
+    }
+    .whom-card {
+      border-radius: 18px;
+      padding: 32px 20px 26px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whom-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(107,84,68,0.12); }
+    .whom-card:nth-child(1) { background: var(--salvia-pale); }
+    .whom-card:nth-child(2) { background: #FDF0E8; }
+    .whom-card:nth-child(3) { background: #EEF3FF; }
+    .whom-card:nth-child(4) { background: #FDF5E0; }
+    .whom-card .icon { font-size: 2.4rem; margin-bottom: 14px; }
+    .whom-card h4 { font-size: 1rem; margin-bottom: 8px; color: var(--tinta); }
+    .whom-card p { font-size: 0.87rem; color: var(--cacao); line-height: 1.55; }
+
+    /* ─── LIFESTYLE PHOTO + TEXT ROW ─── */
+    .lifestyle-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 460px;
+      overflow: hidden;
+    }
+    .lifestyle-photo {
+      position: relative;
+      overflow: hidden;
+    }
+    .lifestyle-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .lifestyle-text {
+      background: var(--nude);
+      padding: 64px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .lifestyle-text h2 { font-size: 2rem; margin-bottom: 16px; }
+    .lifestyle-text p { color: var(--cacao); margin-bottom: 16px; font-size: 0.97rem; }
+    .lifestyle-text .highlight {
+      background: var(--salvia-pale);
+      border-left: 4px solid var(--salvia);
+      padding: 14px 18px;
+      border-radius: 0 10px 10px 0;
+      font-style: italic;
+      color: var(--cacao);
+      font-family: 'Playfair Display', serif;
+      margin-top: 8px;
+    }
+
+    /* ─── INCLUDED ─── */
+    .included {
+      padding: 80px 0;
+      background: var(--hueso);
+    }
+    .included-header { text-align: center; margin-bottom: 52px; }
+    .included-header h2 { font-size: 2.1rem; }
+    .included-header p { color: var(--cacao); max-width: 500px; margin: 12px auto 0; }
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 18px;
+    }
+    .inc-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 24px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      border: 1.5px solid var(--nude);
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+    .inc-card:hover { box-shadow: 0 8px 28px rgba(107,84,68,0.1); transform: translateY(-2px); }
+    .inc-card.featured {
+      background: linear-gradient(135deg, var(--salvia-pale) 0%, #fff 100%);
+      border-color: var(--salvia);
+    }
+    .inc-icon {
+      width: 50px; height: 50px; min-width: 50px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .inc-icon.green  { background: var(--salvia-pale); }
+    .inc-icon.orange { background: #FDF0E8; }
+    .inc-icon.blue   { background: #EEF3FF; }
+    .inc-icon.yellow { background: #FDF5E0; }
+    .inc-icon.pink   { background: #FDEEF5; }
+    .inc-icon.teal   { background: #E8F7F5; }
+    .inc-text h4 { font-size: 1rem; margin-bottom: 5px; color: var(--tinta); }
+    .inc-text p  { font-size: 0.86rem; color: var(--cacao); line-height: 1.55; }
+    .badge {
+      display: inline-block;
+      background: var(--salvia);
+      color: var(--tinta);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+      vertical-align: middle;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── TEMPLATES ─── */
+    .templates-section {
+      background: var(--tinta);
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .templates-section .section-label { background: rgba(181,202,138,0.2); color: var(--salvia); }
+    .templates-section h2 { color: #fff; font-size: 2.1rem; margin-bottom: 12px; }
+    .templates-section > .container--wide > p { color: rgba(255,255,255,0.6); max-width: 500px; margin-bottom: 52px; }
+
+    .templates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .tpl-card {
+      background: var(--warm-white);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tpl-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.25); }
+
+    /* Checklist preview */
+    .tpl-preview { padding: 20px 16px; background: #fff; min-height: 180px; }
+    .tpl-header-bar {
+      background: var(--salvia-light);
+      border-radius: 8px 8px 0 0;
+      padding: 10px 14px;
+      margin: -20px -16px 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .tpl-header-bar .dot { width: 8px; height: 8px; border-radius: 50%; }
+    .tpl-title-line { height: 7px; background: var(--cacao); border-radius: 3px; opacity: 0.25; flex: 1; }
+    .tpl-date-area {
+      display: flex; gap: 6px; margin-bottom: 10px;
+    }
+    .tpl-date-box {
+      flex: 1; height: 24px;
+      border: 1.5px solid var(--nude);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.55rem; color: var(--cacao); opacity: 0.7;
+      font-family: 'Inter', sans-serif;
+    }
+    .chk-row {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 7px;
+    }
+    .chk-box {
+      width: 14px; height: 14px;
+      border: 2px solid var(--salvia);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .chk-box.done { background: var(--salvia); }
+    .chk-box.done::after { content: '✓'; font-size: 0.55rem; color: var(--tinta); font-weight: 700; }
+    .chk-line { flex: 1; height: 6px; background: var(--nude); border-radius: 3px; }
+    .chk-line.short { width: 65%; flex: none; }
+
+    /* Calendar preview */
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+      margin-bottom: 4px;
+    }
+    .cal-day-label {
+      text-align: center;
+      font-size: 0.5rem;
+      font-weight: 600;
+      color: var(--cacao);
+      padding: 3px 0;
+      opacity: 0.7;
+    }
+    .cal-cell {
+      aspect-ratio: 1;
+      border-radius: 4px;
+      background: var(--hueso);
+      border: 1px solid var(--nude);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.5rem;
+      color: var(--cacao);
+      opacity: 0.8;
+    }
+    .cal-cell.today { background: var(--salvia); color: var(--tinta); font-weight: 700; opacity: 1; }
+    .cal-cell.marked { background: var(--salvia-light); border-color: var(--salvia); }
+    .cal-cell.empty  { background: transparent; border-color: transparent; }
+
+    /* Weekly preview */
+    .week-col-header {
+      font-size: 0.5rem; font-weight: 700; color: var(--cacao);
+      text-align: center; padding: 4px 2px;
+      background: var(--salvia-light); border-radius: 4px;
+      margin-bottom: 3px;
+    }
+    .week-block {
+      height: 20px; border-radius: 4px;
+      background: var(--hueso); border: 1px solid var(--nude);
+      margin-bottom: 3px;
+    }
+    .week-block.filled { background: var(--salvia-light); border-color: var(--salvia); }
+
+    /* List preview */
+    .list-category {
+      font-size: 0.6rem; font-weight: 700;
+      color: var(--cacao); letter-spacing: 0.06em;
+      text-transform: uppercase; margin-bottom: 5px; margin-top: 8px;
+      padding-left: 4px; border-left: 3px solid var(--salvia);
+    }
+    .list-row {
+      display: flex; align-items: center; gap: 6px; margin-bottom: 4px;
+    }
+    .list-circle {
+      width: 10px; height: 10px;
+      border: 1.5px solid var(--nude); border-radius: 50%; flex-shrink: 0;
+    }
+    .list-row-line { flex: 1; height: 5px; background: var(--nude); border-radius: 3px; }
+
+    .tpl-footer {
+      padding: 14px 16px 18px;
+      background: var(--warm-white);
+    }
+    .tpl-footer h4 { font-size: 0.95rem; color: var(--tinta); margin-bottom: 3px; }
+    .tpl-footer p  { font-size: 0.8rem; color: var(--cacao); }
+
+    /* ─── PHOTO MOOD SECTION ─── */
+    .mood-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 380px;
+    }
+    .mood-photo {
+      position: relative;
+      overflow: hidden;
+    }
+    .mood-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+    .mood-photo:hover img { transform: scale(1.06); }
+    .mood-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(31,27,23,0.55) 0%, transparent 50%);
+      display: flex; align-items: flex-end; padding: 18px;
+    }
+    .mood-word {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    /* ─── ACCOMPANIMENT ─── */
+    .accomp {
+      padding: 80px 0;
+      background: var(--salvia-pale);
+    }
+    .accomp-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .accomp-text h2 { font-size: 2.1rem; margin-bottom: 16px; }
+    .accomp-text p  { color: var(--cacao); margin-bottom: 24px; }
+
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 18px 0;
+      position: relative;
+    }
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px; top: 58px; bottom: -10px;
+      width: 2px;
+      background: var(--salvia);
+    }
+    .step-num {
+      width: 40px; height: 40px; min-width: 40px;
+      border-radius: 50%;
+      background: var(--salvia);
+      color: var(--tinta);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 10px rgba(181,202,138,0.5);
+    }
+    .step-text h4 { font-size: 0.98rem; margin-bottom: 3px; }
+    .step-text p  { font-size: 0.86rem; color: var(--cacao); }
+
+    .accomp-photo {
+      border-radius: 24px;
+      overflow: hidden;
+      height: 420px;
+      box-shadow: 0 20px 60px rgba(107,84,68,0.2);
+    }
+    .accomp-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ─── AUTHOR ─── */
+    .author {
+      background: var(--cacao);
+      color: var(--hueso);
+      padding: 72px 0;
+    }
+    .author-inner {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .author-photo {
+      width: 160px; height: 200px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid var(--salvia);
+      flex-shrink: 0;
+    }
+    .author-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .author-photo-placeholder {
+      width: 160px; height: 200px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, var(--salvia-dark), var(--salvia));
+      border: 3px solid var(--salvia);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+    }
+    .author-content .script-tag { color: var(--salvia); font-size: 1.2rem; margin-bottom: 10px; }
+    .author-content h2 { font-size: 2rem; color: #fff; margin-bottom: 16px; }
+    .author-content p  { color: rgba(250,247,242,0.82); line-height: 1.75; margin-bottom: 12px; font-size: 0.97rem; }
+    .author-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(181,202,138,0.15);
+      border: 1px solid rgba(181,202,138,0.35);
+      padding: 10px 20px;
+      border-radius: 50px;
+      color: var(--salvia);
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    /* ─── PRICING ─── */
+    .pricing {
+      background: linear-gradient(160deg, var(--nude) 0%, var(--hueso) 100%);
+      padding: 90px 0;
+      text-align: center;
+    }
+    .pricing h2 { font-size: 2.2rem; margin-bottom: 10px; }
+    .pricing > .container > p { color: var(--cacao); margin-bottom: 40px; }
+
+    .pricing-card {
+      background: #fff;
+      border-radius: 28px;
+      padding: 52px 44px 44px;
+      max-width: 480px;
+      margin: 0 auto;
+      box-shadow: 0 16px 60px rgba(107,84,68,0.16);
+      border: 2px solid var(--nude);
+      position: relative;
+      overflow: hidden;
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--salvia), var(--salvia-dark));
+    }
+    .pricing-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: var(--cacao);
+      line-height: 1;
+      margin: 20px 0 6px;
+    }
+    .pricing-price sup {
+      font-size: 2rem;
+      vertical-align: super;
+    }
+    .pricing-note { font-size: 0.85rem; color: var(--cacao); opacity: 0.6; margin-bottom: 32px; }
+
+    .check-list { list-style: none; text-align: left; margin-bottom: 36px; }
+    .check-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 10px 0;
+      font-size: 0.93rem;
+      border-bottom: 1px solid var(--hueso);
+    }
+    .check-list li:last-child { border: none; }
+    .chk-circle {
+      width: 22px; height: 22px; min-width: 22px;
+      background: var(--salvia);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .chk-circle::after { content: '✓'; font-size: 0.65rem; font-weight: 700; color: var(--tinta); }
+
+    .pricing-card .btn-primary {
+      width: 100%;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 20px;
+      border-radius: 16px;
+    }
+    .guarantee {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: var(--cacao);
+      opacity: 0.55;
+    }
+
+    /* ─── FAQ ─── */
+    .faq { padding: 72px 0; background: var(--warm-white); }
+    .faq h2 { text-align: center; font-size: 2rem; margin-bottom: 44px; }
+    .faq-item { border-bottom: 1.5px solid var(--nude); padding: 22px 0; }
+    .faq-item:first-of-type { border-top: 1.5px solid var(--nude); }
+    .faq-q { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .faq-a { font-size: 0.9rem; color: var(--cacao); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--tinta);
+      color: rgba(250,247,242,0.7);
+      text-align: center;
+      padding: 44px 24px 36px;
+      font-size: 0.83rem;
+    }
+    .footer-script {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.7rem;
+      color: var(--salvia);
+      display: block;
+      margin-bottom: 8px;
+    }
+    footer a { color: var(--salvia); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .photo-strip { grid-template-columns: 1fr 1fr; height: 200px; }
+      .photo-strip-item:nth-child(3),
+      .photo-strip-item:nth-child(4) { display: none; }
+      .lifestyle-row { grid-template-columns: 1fr; }
+      .lifestyle-photo { height: 280px; }
+      .lifestyle-text { padding: 40px 28px; }
+      .mood-section { grid-template-columns: 1fr 1fr; }
+      .mood-photo:nth-child(3) { display: none; }
+      .accomp-inner { grid-template-columns: 1fr; }
+      .accomp-photo { height: 260px; }
+      .author-inner { grid-template-columns: 1fr; text-align: center; }
+      .author-photo-placeholder { margin: 0 auto; }
+      .pricing-card { padding: 36px 24px; }
+      .pricing-price { font-size: 3.4rem; }
+      .hero-content { margin-left: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .photo-strip { height: 160px; }
+      .templates-grid { grid-template-columns: 1fr 1fr; }
+      .whom-grid { grid-template-columns: 1fr 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .mood-section { grid-template-columns: 1fr; height: 200px; }
+      .mood-photo:nth-child(2), .mood-photo:nth-child(3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="script-tag">✨ Ya disponible</span>
+    <h1><em>Despacio</em><br>y con Propósito</h1>
+    <p class="hero-subtitle">Aprende a vivir despacio, con intención y presente — dentro y fuera del homeschooling.</p>
+    <div class="hero-price-row">
+      <div class="price-pill">€5,99</div>
+      <div class="price-desc">Pago único<br>Descarga inmediata</div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#comprar" class="btn-primary">Quiero mi copia →</a>
+      <a href="#que-incluye" class="btn-outline">Ver contenido</a>
+    </div>
+    <p class="hero-note">🔒 Pago seguro · PDF descargable · Sin suscripciones</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ PHOTO STRIP ═══════════════════════════════════ -->
+<div class="photo-strip">
+  <div class="photo-strip-item">
+    <img src="https://images.unsplash.com/photo-1602623352964-b18f5ba5e4ad?auto=format&fit=crop&w=600&q=80"
+         alt="Mamá leyendo con su hijo en casa" loading="lazy" />
+    <div class="caption">Momentos que importan</div>
+  </div>
+  <div class="photo-strip-item">
+    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=400&q=80"
+         alt="Desayuno en familia" loading="lazy" />
+    <div class="caption">Mañanas despacio</div>
+  </div>
+  <div class="photo-strip-item">
+    <img src="https://images.unsplash.com/photo-1471286174890-9c112ac6476d?auto=format&fit=crop&w=400&q=80"
+         alt="Niños aprendiendo felices" loading="lazy" />
+    <div class="caption">Aprender con alegría</div>
+  </div>
+  <div class="photo-strip-item">
+    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=600&q=80"
+         alt="Libros y aprendizaje en casa" loading="lazy" />
+    <div class="caption">Vida con propósito</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ FOR WHOM ═══════════════════════════════════ -->
+<section class="for-whom">
+  <div class="container">
+    <span class="section-label">¿Es para ti?</span>
+    <h2>Este libro llegó en el momento justo</h2>
+    <p>Si sientes que la vida pasa demasiado rápido y el homeschooling se convierte en otra carrera más, esto es lo que necesitas.</p>
+    <div class="whom-grid">
+      <div class="whom-card">
+        <div class="icon">🌱</div>
+        <h4>Empiezas el homeschooling</h4>
+        <p>No sabes por dónde comenzar y quieres hacerlo con calma y seguridad.</p>
+      </div>
+      <div class="whom-card">
+        <div class="icon">🌸</div>
+        <h4>Buscas más presencia</h4>
+        <p>Quieres dejar de sobrevivir el día a día y empezar a disfrutarlo.</p>
+      </div>
+      <div class="whom-card">
+        <div class="icon">🗂️</div>
+        <h4>Necesitas estructura</h4>
+        <p>Quieres organizar el aprendizaje en casa sin listas interminables.</p>
+      </div>
+      <div class="whom-card">
+        <div class="icon">🌍</div>
+        <h4>Vives en EE.UU.</h4>
+        <p>Quieres entender la legalidad y los pasos del homeschooling americano.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ LIFESTYLE SPLIT ═══════════════════════════════════ -->
+<div class="lifestyle-row">
+  <div class="lifestyle-photo">
+    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=80"
+         alt="Familia disfrutando en casa" loading="lazy" />
+  </div>
+  <div class="lifestyle-text">
+    <span class="script-tag">El libro</span>
+    <h2>Vivir despacio<br>no es vivir menos</h2>
+    <p>Es vivir mejor. Es dejar de correr hacia un destino y empezar a disfrutar el camino junto a tus hijos.</p>
+    <p>Este ebook nació de mi propia experiencia intentando hacerlo todo perfecto — hasta que aprendí que el ritmo natural de nuestra familia era suficiente.</p>
+    <div class="highlight">"Despacio y con Propósito es el libro que hubiera querido tener el primer día que decidí hacer homeschooling."</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ INCLUDED ═══════════════════════════════════ -->
+<section class="included" id="que-incluye">
+  <div class="container--wide">
+    <div class="included-header">
+      <span class="section-label">Todo lo que recibes</span>
+      <h2>Un paquete completo por €5,99</h2>
+      <p>Todo lo que necesitas para comenzar — o reinventar — tu homeschooling con calma.</p>
+    </div>
+    <div class="included-grid">
+      <div class="inc-card featured">
+        <div class="inc-icon green">📖</div>
+        <div class="inc-text">
+          <h4>Ebook: Despacio y con Propósito <span class="badge">Nuevo</span></h4>
+          <p>21 páginas para redescubrir el ritmo natural de tu familia y aprender a vivir con intención plena.</p>
+        </div>
+      </div>
+      <div class="inc-card featured">
+        <div class="inc-icon blue">🇺🇸</div>
+        <div class="inc-text">
+          <h4>Ebook: Homeschooling en EE.UU.</h4>
+          <p>23 páginas con todo lo que necesitas: leyes por estado, pasos, recursos y cómo empezar sin miedo.</p>
+        </div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon green">✅</div>
+        <div class="inc-text">
+          <h4>Plantilla Checklist Diario</h4>
+          <p>Lista descargable para organizar cada día sin agobios. Adapta, tacha, avanza.</p>
+        </div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon orange">📅</div>
+        <div class="inc-text">
+          <h4>Calendario Semanal</h4>
+          <p>Planifica lecciones, actividades y tiempo libre con una vista semanal clara y visual.</p>
+        </div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon yellow">🗓️</div>
+        <div class="inc-text">
+          <h4>Calendario Mensual</h4>
+          <p>El panorama completo: festividades, salidas, proyectos especiales y días de descanso.</p>
+        </div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon pink">🎒</div>
+        <div class="inc-text">
+          <h4>Lista de Útiles y Materiales</h4>
+          <p>Todo lo que necesitas tener a mano para un espacio de aprendizaje organizado.</p>
+        </div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon teal">💚</div>
+        <div class="inc-text">
+          <h4>Acompañamiento Personal</h4>
+          <p>Desde el primer día de tu homeschooling, tienes mi acompañamiento. No estarás sola.</p>
+        </div>
+      </div>
+      <div class="inc-card">
+        <div class="inc-icon orange">💬</div>
+        <div class="inc-text">
+          <h4>Asesoría Disponible</h4>
+          <p>¿Tienes preguntas? Puedo orientarte cuando lo necesites — personalmente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ TEMPLATES ═══════════════════════════════════ -->
+<section class="templates-section">
+  <div class="container--wide">
+    <span class="section-label">Plantillas incluidas</span>
+    <h2>Listas para imprimir y usar</h2>
+    <p>Diseñadas para familias reales. Sin complicaciones — solo claridad y calma.</p>
+
+    <div class="templates-grid">
+
+      <!-- Checklist -->
+      <div class="tpl-card">
+        <div class="tpl-preview">
+          <div class="tpl-header-bar">
+            <div class="dot" style="background:#B5CA8A;"></div>
+            <div class="dot" style="background:#E5DCC5;"></div>
+            <div class="tpl-title-line"></div>
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.7rem;font-weight:700;margin-bottom:4px;color:#1F1B17;">Checklist Diario</div>
+          <div class="tpl-date-area">
+            <div class="tpl-date-box">Lunes</div>
+            <div class="tpl-date-box">Fecha</div>
+          </div>
+          <div class="chk-row"><div class="chk-box done"></div><div class="chk-line"></div></div>
+          <div class="chk-row"><div class="chk-box done"></div><div class="chk-line short"></div></div>
+          <div class="chk-row"><div class="chk-box"></div><div class="chk-line"></div></div>
+          <div class="chk-row"><div class="chk-box"></div><div class="chk-line short"></div></div>
+          <div class="chk-row"><div class="chk-box"></div><div class="chk-line"></div></div>
+          <div style="margin-top:8px;font-size:0.55rem;color:#9c7a6a;border-top:1px solid #E5DCC5;padding-top:6px;">Notas del día</div>
+          <div style="height:18px;background:#FAF7F2;border-radius:4px;margin-top:4px;border:1px solid #E5DCC5;"></div>
+        </div>
+        <div class="tpl-footer">
+          <h4>Checklist Diario</h4>
+          <p>Organiza cada jornada con claridad</p>
+        </div>
+      </div>
+
+      <!-- Semanal -->
+      <div class="tpl-card">
+        <div class="tpl-preview">
+          <div class="tpl-header-bar">
+            <div class="dot" style="background:#B5CA8A;"></div>
+            <div class="dot" style="background:#E5DCC5;"></div>
+            <div class="tpl-title-line"></div>
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.7rem;font-weight:700;margin-bottom:8px;color:#1F1B17;">Semana del ___ al ___</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;">
+            <div class="week-col-header">LUN</div>
+            <div class="week-col-header">MAR</div>
+            <div class="week-col-header">MIÉ</div>
+            <div class="week-col-header">JUE</div>
+            <div class="week-col-header">VIE</div>
+            <div class="week-block filled"></div>
+            <div class="week-block"></div>
+            <div class="week-block filled"></div>
+            <div class="week-block"></div>
+            <div class="week-block"></div>
+            <div class="week-block"></div>
+            <div class="week-block filled"></div>
+            <div class="week-block"></div>
+            <div class="week-block filled"></div>
+            <div class="week-block"></div>
+            <div class="week-block filled"></div>
+            <div class="week-block"></div>
+            <div class="week-block"></div>
+            <div class="week-block"></div>
+            <div class="week-block filled"></div>
+          </div>
+        </div>
+        <div class="tpl-footer">
+          <h4>Calendario Semanal</h4>
+          <p>Planifica la semana de un vistazo</p>
+        </div>
+      </div>
+
+      <!-- Mensual -->
+      <div class="tpl-card">
+        <div class="tpl-preview">
+          <div class="tpl-header-bar">
+            <div class="dot" style="background:#B5CA8A;"></div>
+            <div class="dot" style="background:#E5DCC5;"></div>
+            <div class="tpl-title-line"></div>
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.7rem;font-weight:700;margin-bottom:8px;color:#1F1B17;">Mes de ____________</div>
+          <div class="cal-grid">
+            <div class="cal-day-label">L</div><div class="cal-day-label">M</div>
+            <div class="cal-day-label">X</div><div class="cal-day-label">J</div>
+            <div class="cal-day-label">V</div><div class="cal-day-label">S</div>
+            <div class="cal-day-label">D</div>
+            <div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+            <div class="cal-cell">1</div><div class="cal-cell">2</div>
+            <div class="cal-cell">3</div><div class="cal-cell">4</div>
+            <div class="cal-cell">5</div>
+            <div class="cal-cell">6</div><div class="cal-cell marked">7</div>
+            <div class="cal-cell">8</div><div class="cal-cell">9</div>
+            <div class="cal-cell today">10</div><div class="cal-cell">11</div>
+            <div class="cal-cell">12</div>
+            <div class="cal-cell">13</div><div class="cal-cell">14</div>
+            <div class="cal-cell marked">15</div><div class="cal-cell">16</div>
+            <div class="cal-cell">17</div><div class="cal-cell">18</div>
+            <div class="cal-cell">19</div>
+          </div>
+        </div>
+        <div class="tpl-footer">
+          <h4>Calendario Mensual</h4>
+          <p>El mes completo de un vistazo</p>
+        </div>
+      </div>
+
+      <!-- Lista de útiles -->
+      <div class="tpl-card">
+        <div class="tpl-preview">
+          <div class="tpl-header-bar">
+            <div class="dot" style="background:#B5CA8A;"></div>
+            <div class="dot" style="background:#E5DCC5;"></div>
+            <div class="tpl-title-line"></div>
+          </div>
+          <div style="font-family:'Playfair Display',serif;font-size:0.7rem;font-weight:700;margin-bottom:4px;color:#1F1B17;">Lista de Útiles</div>
+          <div class="list-category">Material básico</div>
+          <div class="list-row"><div class="list-circle"></div><div class="list-row-line"></div></div>
+          <div class="list-row"><div class="list-circle" style="background:var(--salvia-light);border-color:var(--salvia);"></div><div class="list-row-line" style="width:70%;flex:none;"></div></div>
+          <div class="list-row"><div class="list-circle"></div><div class="list-row-line" style="width:55%;flex:none;"></div></div>
+          <div class="list-category">Arte y creatividad</div>
+          <div class="list-row"><div class="list-circle"></div><div class="list-row-line"></div></div>
+          <div class="list-row"><div class="list-circle" style="background:var(--salvia-light);border-color:var(--salvia);"></div><div class="list-row-line" style="width:65%;flex:none;"></div></div>
+          <div class="list-category">Recursos digitales</div>
+          <div class="list-row"><div class="list-circle"></div><div class="list-row-line"></div></div>
+        </div>
+        <div class="tpl-footer">
+          <h4>Lista de Útiles</h4>
+          <p>Todo lo que necesitas tener a mano</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ MOOD PHOTOS ═══════════════════════════════════ -->
+<div class="mood-section">
+  <div class="mood-photo">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+         alt="Vivir despacio" loading="lazy" />
+    <div class="mood-overlay"><span class="mood-word">Vivir despacio</span></div>
+  </div>
+  <div class="mood-photo">
+    <img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?auto=format&fit=crop&w=600&q=80"
+         alt="Familia feliz" loading="lazy" />
+    <div class="mood-overlay"><span class="mood-word">Familia primero</span></div>
+  </div>
+  <div class="mood-photo">
+    <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=600&q=80"
+         alt="Aprender con propósito" loading="lazy" />
+    <div class="mood-overlay"><span class="mood-word">Con propósito</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ ACCOMPANIMENT ═══════════════════════════════════ -->
+<section class="accomp">
+  <div class="container--wide">
+    <div class="accomp-inner">
+      <div class="accomp-text">
+        <span class="section-label">Mi acompañamiento</span>
+        <h2>No comienzas sola</h2>
+        <p>Desde el primer día que decides hacer homeschooling, tienes mi mano. Porque este camino es hermoso pero también necesita compañía.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <h4>Compras y descargas</h4>
+              <p>Recibes acceso inmediato a los ebooks, plantillas y todos los recursos.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <h4>Exploras a tu ritmo</h4>
+              <p>Lees, planificas y adaptas las plantillas a la realidad de tu familia.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <h4>Escribes cuando lo necesites</h4>
+              <p>¿Tienes dudas? Me escribes y te acompaño en lo que necesites.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-text">
+              <h4>Comienzas con seguridad</h4>
+              <p>Empiezas con bases sólidas, herramientas claras y alguien en quien apoyarte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accomp-photo">
+        <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=600&q=80"
+             alt="Mamá e hijos aprendiendo juntos en casa" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ AUTHOR ═══════════════════════════════════ -->
+<section class="author">
+  <div class="container">
+    <div class="author-inner">
+      <div class="author-photo-placeholder">🌿</div>
+      <div class="author-content">
+        <span class="script-tag">Sobre la autora</span>
+        <h2>Hola, soy Adriana</h2>
+        <p>Soy mamá, mentora de homeschooling y creo profundamente en que la educación en casa puede ser una experiencia tranquila, intencional y llena de vida cuando tienes las herramientas adecuadas.</p>
+        <p>Escribí <em>Despacio y con Propósito</em> porque viví la vorágine de intentar hacerlo todo perfecto — y aprendí que el camino más bonito es el más despacio. Este libro es todo lo que hubiera querido tener al comenzar.</p>
+        <a href="mailto:adrianacarolinamaceira@gmail.com" class="author-email">
+          ✉️ adrianacarolinamaceira@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ PRICING ═══════════════════════════════════ -->
+<section class="pricing" id="comprar">
+  <div class="container">
+    <span class="section-label">¿Lista para empezar?</span>
+    <h2>Todo por un precio honesto</h2>
+    <p>Un pago único, sin sorpresas, sin suscripciones.</p>
+
+    <div class="pricing-card">
+      <span style="font-family:'Dancing Script',cursive;font-size:1rem;color:var(--cacao);">Paquete completo</span>
+      <div class="pricing-price"><sup>€</sup>5<span style="font-size:2.5rem;">,99</span></div>
+      <p class="pricing-note">Pago único · Descarga digital inmediata</p>
+
+      <ul class="check-list">
+        <li><span class="chk-circle"></span> Ebook "Despacio y con Propósito" (21 págs.)</li>
+        <li><span class="chk-circle"></span> Ebook "Homeschooling en EE.UU." (23 págs.)</li>
+        <li><span class="chk-circle"></span> Plantilla Checklist Diario</li>
+        <li><span class="chk-circle"></span> Calendario Semanal</li>
+        <li><span class="chk-circle"></span> Calendario Mensual</li>
+        <li><span class="chk-circle"></span> Lista de Útiles y Materiales</li>
+        <li><span class="chk-circle"></span> Acompañamiento personal incluido</li>
+        <li><span class="chk-circle"></span> Asesoría disponible</li>
+      </ul>
+
+      <!-- ⬇️  Reemplaza href con tu link de pago (Gumroad, Stripe, PayPal, etc.) -->
+      <a href="#" class="btn-primary">Comprar ahora por €5,99</a>
+      <p class="guarantee">🔒 Pago seguro · Producto digital · Sin reembolsos por descarga inmediata</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ FAQ ═══════════════════════════════════ -->
+<section class="faq">
+  <div class="container">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq-item">
+      <p class="faq-q">¿En qué formato recibo el ebook?</p>
+      <p class="faq-a">Recibirás los ebooks en formato PDF, listos para leer en cualquier dispositivo o imprimir.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">¿Tengo que vivir en Estados Unidos?</p>
+      <p class="faq-a">No. El ebook de EE.UU. es un bonus para quienes viven allí. El libro principal y las plantillas sirven para cualquier familia en cualquier lugar del mundo.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">¿Cómo funciona el acompañamiento?</p>
+      <p class="faq-a">Una vez que compras, puedes escribirme a <strong>adrianacarolinamaceira@gmail.com</strong> con tus preguntas. Te respondo personalmente para orientarte según tu situación.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">¿Puedo imprimir las plantillas?</p>
+      <p class="faq-a">Sí, todas las plantillas están diseñadas específicamente para imprimirse. También puedes usarlas de forma digital si lo prefieres.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">¿Hay reembolso?</p>
+      <p class="faq-a">Por ser productos digitales con descarga inmediata, no aplica reembolso. Si tienes dudas antes de comprar, escríbeme — con mucho gusto te oriento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
+<footer>
+  <span class="footer-script">Adriana Maceira</span>
+  <p>Mentora de Homeschooling · © 2025 · Todos los derechos reservados</p>
+  <p style="margin-top:8px;">
+    <a href="mailto:adrianacarolinamaceira@gmail.com">adrianacarolinamaceira@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+</html>
