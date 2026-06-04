@@ -213,8 +213,11 @@
 
     .whom-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
+    }
+    @media (max-width: 700px) {
+      .whom-grid { grid-template-columns: repeat(2, 1fr); }
     }
     .whom-card {
       border-radius: 18px;
@@ -720,23 +723,27 @@
 <!-- ═══════════════════════════════════ PHOTO STRIP ═══════════════════════════════════ -->
 <div class="photo-strip">
   <div class="photo-strip-item">
-    <img src="https://images.unsplash.com/photo-1602623352964-b18f5ba5e4ad?auto=format&fit=crop&w=600&q=80"
-         alt="Mamá leyendo con su hijo en casa" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80"
+         alt="Mamá leyendo con su hijo en casa" loading="lazy"
+         onerror="this.style.display='none';this.parentElement.style.background='#d4e4b2'" />
     <div class="caption">Momentos que importan</div>
   </div>
   <div class="photo-strip-item">
-    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=400&q=80"
-         alt="Desayuno en familia" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80"
+         alt="Desayuno en familia" loading="lazy"
+         onerror="this.style.display='none';this.parentElement.style.background='#E5DCC5'" />
     <div class="caption">Mañanas despacio</div>
   </div>
   <div class="photo-strip-item">
-    <img src="https://images.unsplash.com/photo-1471286174890-9c112ac6476d?auto=format&fit=crop&w=400&q=80"
-         alt="Niños aprendiendo felices" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b24?auto=format&fit=crop&w=400&q=80"
+         alt="Niños aprendiendo felices" loading="lazy"
+         onerror="this.style.display='none';this.parentElement.style.background='#B5CA8A'" />
     <div class="caption">Aprender con alegría</div>
   </div>
   <div class="photo-strip-item">
-    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=600&q=80"
-         alt="Libros y aprendizaje en casa" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80"
+         alt="Libros y aprendizaje en casa" loading="lazy"
+         onerror="this.style.display='none';this.parentElement.style.background='#FAF7F2'" />
     <div class="caption">Vida con propósito</div>
   </div>
 </div>
@@ -996,13 +1003,15 @@
 <!-- ═══════════════════════════════════ MOOD PHOTOS ═══════════════════════════════════ -->
 <div class="mood-section">
   <div class="mood-photo">
-    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
-         alt="Vivir despacio" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80"
+         alt="Familia en casa, sala de estar" loading="lazy"
+         onerror="this.style.display='none';this.parentElement.style.background='#6B5444'" />
     <div class="mood-overlay"><span class="mood-word">Vivir despacio</span></div>
   </div>
   <div class="mood-photo">
-    <img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?auto=format&fit=crop&w=600&q=80"
-         alt="Familia feliz" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1536476593791-62d41e11db0a?auto=format&fit=crop&w=600&q=80"
+         alt="Familia feliz en casa" loading="lazy"
+         onerror="this.style.display='none';this.parentElement.style.background='#9ab870'" />
     <div class="mood-overlay"><span class="mood-word">Familia primero</span></div>
   </div>
   <div class="mood-photo">
@@ -1052,8 +1061,9 @@
         </div>
       </div>
       <div class="accomp-photo">
-        <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=600&q=80"
-             alt="Mamá e hijos aprendiendo juntos en casa" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80"
+             alt="Mamá latina con su hijo aprendiendo" loading="lazy"
+             onerror="this.style.display='none';this.parentElement.style.background='#d4e4b2'" />
       </div>
     </div>
   </div>
@@ -1063,12 +1073,15 @@
 <section class="author">
   <div class="container">
     <div class="author-inner">
-      <div class="author-photo-placeholder">🌿</div>
+      <div class="author-photo">
+        <img src="adriana.webp" alt="Adriana Maceira" />
+      </div>
       <div class="author-content">
         <span class="script-tag">Sobre la autora</span>
         <h2>Hola, soy Adriana</h2>
-        <p>Soy mamá, mentora de homeschooling y creo profundamente en que la educación en casa puede ser una experiencia tranquila, intencional y llena de vida cuando tienes las herramientas adecuadas.</p>
-        <p>Escribí <em>Despacio y con Propósito</em> porque viví la vorágine de intentar hacerlo todo perfecto — y aprendí que el camino más bonito es el más despacio. Este libro es todo lo que hubiera querido tener al comenzar.</p>
+        <p>Soy mamá homeschooler y creo profundamente en que educar en casa puede ser una experiencia tranquila, intencional y llena de vida. Para mí el homeschooling no es solo una forma de enseñar — es una forma de vivir. Es caminar junto a mis hijos, crecer con ellos, darles el espacio para descubrirse a sí mismos sin prisas y en armonía.</p>
+        <p>Creo en una familia que aprende junta, que se conoce mejor, que construye recuerdos en el día a día. Mi perspectiva es simple: cuando damos a nuestros hijos la oportunidad de crecer en un ambiente de amor y presencia, florecen de maneras que ningún sistema escolar puede replicar.</p>
+        <p>Escribí <em>Despacio y con Propósito</em> porque sentí la presión de querer hacerlo todo bien desde el primer día — y aprendí que el camino más bonito es el que se recorre con calma. Este libro es todo lo que hubiera querido tener al comenzar.</p>
         <a href="mailto:adrianacarolinamaceira@gmail.com" class="author-email">
           ✉️ adrianacarolinamaceira@gmail.com
         </a>
@@ -1081,8 +1094,8 @@
 <section class="pricing" id="comprar">
   <div class="container">
     <span class="section-label">¿Lista para empezar?</span>
-    <h2>Todo por un precio honesto</h2>
-    <p>Un pago único, sin sorpresas, sin suscripciones.</p>
+    <h2>Un pago único,<br>sin sorpresas ni suscripciones</h2>
+    <p></p>
 
     <div class="pricing-card">
       <span style="font-family:'Dancing Script',cursive;font-size:1rem;color:var(--cacao);">Paquete completo</span>
@@ -1136,7 +1149,7 @@
 <!-- ═══════════════════════════════════ FOOTER ═══════════════════════════════════ -->
 <footer>
   <span class="footer-script">Adriana Maceira</span>
-  <p>Mentora de Homeschooling · © 2025 · Todos los derechos reservados</p>
+  <p>Mamá homeschooler · © 2025 · Todos los derechos reservados</p>
   <p style="margin-top:8px;">
     <a href="mailto:adrianacarolinamaceira@gmail.com">adrianacarolinamaceira@gmail.com</a>
   </p>
